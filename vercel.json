@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/api/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "includeFiles": "backend/**/*.py"
+      }
+    },
+    {
+      "src": "frontend/dist/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/api/main.py"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/frontend/dist/assets/$1"
+    },
+    {
+      "src": "/vite.svg",
+      "dest": "/frontend/dist/vite.svg"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dist/index.html"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "backend"
+  }
+}

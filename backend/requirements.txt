@@ -1,0 +1,35 @@
+# FastMCP for MCP server
+fastmcp>=0.1.0
+
+# Apify client for scraping
+apify-client>=1.7.0
+
+# PostgreSQL adapter
+psycopg2-binary>=2.9.9
+
+# Async support (built-in with Python 3.7+, but including aiohttp for async HTTP)
+aiohttp>=3.9.0
+
+# Data validation
+pydantic>=2.5.0
+
+# Configuration parsing
+PyYAML>=6.0.1
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+hypothesis>=6.92.0
+
+# Utilities
+python-dotenv>=1.0.0
+
+# FastAPI and web server
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Gemini API for embeddings (replaces sentence-transformers)
+google-generativeai>=0.3.0
+
+# Basic math operations (much smaller than torch)
+numpy>=1.24.0
